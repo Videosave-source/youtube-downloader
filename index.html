@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,44 +7,26 @@
 
   <title>Download Video YouTube - YouTube Downloader</title>
 
-  <meta
-    name="description"
-    content="Download video YouTube dengan mudah melalui browser. Tempel link YouTube dan gunakan YouTube Downloader untuk menyimpan video."
-  >
-
-  <meta
-    name="keywords"
-    content="download video YouTube, YouTube downloader, download YouTube, unduh video YouTube, YouTube video downloader"
-  >
-
+  <meta name="description"
+    content="Download video YouTube dengan mudah. Tempel link video YouTube, pilih kualitas video, lalu download.">
+  <meta name="keywords"
+    content="download video YouTube, YouTube downloader, download YouTube, unduh video YouTube, YouTube video downloader">
   <meta name="robots" content="index, follow">
 
-  <link
-    rel="canonical"
-    href="https://videosave-source.github.io/youtube-downloader/"
-  >
+  <link rel="canonical"
+    href="https://videosave-source.github.io/youtube-downloader/">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Download Video YouTube - YouTube Downloader">
-  <meta
-    property="og:description"
-    content="Download video YouTube dengan mudah melalui browser."
-  >
-  <meta
-    property="og:url"
-    content="https://videosave-source.github.io/youtube-downloader/"
-  >
-  <meta property="og:site_name" content="YouTube Downloader">
+  <meta property="og:description"
+    content="Download video YouTube dengan mudah melalui browser.">
+  <meta property="og:url"
+    content="https://videosave-source.github.io/youtube-downloader/">
 
   <meta name="twitter:card" content="summary">
-  <meta
-    name="twitter:title"
-    content="Download Video YouTube - YouTube Downloader"
-  >
-  <meta
-    name="twitter:description"
-    content="Download video YouTube dengan mudah melalui browser."
-  >
+  <meta name="twitter:title" content="Download Video YouTube - YouTube Downloader">
+  <meta name="twitter:description"
+    content="Download video YouTube dengan mudah melalui browser.">
 
   <script type="application/ld+json">
   {
@@ -67,11 +50,19 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0b0f;
-      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #09090d;
+      color: #ffffff;
+    }
+
+    a {
+      text-decoration: none;
     }
 
     header {
@@ -80,292 +71,282 @@
       margin: auto;
       padding: 22px 20px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 15px;
     }
 
     .logo {
-      font-size: 25px;
+      font-size: 28px;
       font-weight: 800;
+      letter-spacing: -1px;
     }
 
     .logo span {
       color: #ff3030;
     }
 
-    .badge {
-      border: 1px solid #444;
+    .free {
+      border: 2px solid #3b3b42;
       border-radius: 30px;
-      padding: 8px 15px;
-      font-size: 12px;
+      padding: 12px 22px;
+      color: #ff4b4b;
       font-weight: bold;
-      color: #ff5555;
-    }
-
-    main {
-      width: 100%;
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px 70px;
     }
 
     .hero {
+      width: 100%;
+      max-width: 850px;
+      margin: auto;
+      padding: 70px 20px 40px;
       text-align: center;
-      padding: 35px 0;
     }
 
-    .hero-icon {
-      width: 70px;
-      height: 70px;
-      margin: 0 auto 25px;
-      border-radius: 20px;
+    .youtube-icon {
+      width: 140px;
+      height: 100px;
+      margin: 0 auto 40px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #ff3030, #c90000);
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #ff3333, #b00000);
-      font-size: 32px;
+      box-shadow: 0 15px 40px rgba(255, 0, 0, .18);
+    }
+
+    .play {
+      width: 0;
+      height: 0;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-left: 34px solid white;
+      margin-left: 8px;
     }
 
     h1 {
-      font-size: clamp(36px, 7vw, 62px);
+      font-size: clamp(42px, 8vw, 76px);
       line-height: 1.05;
-      margin: 0 0 20px;
+      margin: 0 0 30px;
+      font-weight: 800;
     }
 
     h1 span {
-      color: #ff4040;
+      color: #ff3838;
     }
 
-    .hero > p {
-      color: #aaa;
-      max-width: 650px;
-      margin: 0 auto 30px;
+    .subtitle {
+      color: #a8a8b0;
+      font-size: 21px;
       line-height: 1.7;
-      font-size: 17px;
+      max-width: 700px;
+      margin: 0 auto 40px;
     }
 
-    .download-box {
-      max-width: 700px;
+    .downloader {
+      width: 100%;
+      max-width: 650px;
       margin: auto;
     }
 
-    .input-wrapper {
+    .input-box {
       background: #17171d;
-      border: 1px solid #333;
-      border-radius: 15px;
-      padding: 8px;
+      border: 2px solid #303038;
+      border-radius: 22px;
+      padding: 16px;
       display: flex;
+      gap: 10px;
       align-items: center;
-      gap: 8px;
     }
 
     .link-icon {
-      padding-left: 10px;
-      font-size: 18px;
+      font-size: 30px;
+      flex-shrink: 0;
     }
 
-    input {
-      flex: 1;
-      min-width: 0;
+    #videoUrl {
+      width: 100%;
       background: transparent;
       border: 0;
-      outline: 0;
-      color: white;
-      padding: 14px 5px;
-      font-size: 15px;
-    }
-
-    input::placeholder {
-      color: #777;
-    }
-
-    #pasteBtn {
-      border: 0;
-      background: #eee;
-      color: #111;
-      border-radius: 10px;
-      padding: 11px 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    #downloadBtn {
-      width: 100%;
-      margin-top: 14px;
-      padding: 17px;
-      border: 0;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #ff3030, #b40000);
+      outline: none;
       color: white;
       font-size: 17px;
-      font-weight: 800;
+      padding: 12px 4px;
+    }
+
+    #videoUrl::placeholder {
+      color: #777780;
+    }
+
+    .paste-btn {
+      width: 100%;
+      margin-top: 10px;
+      padding: 16px;
+      border: 0;
+      border-radius: 15px;
+      background: #f2f2f2;
+      color: #111;
+      font-size: 17px;
+      font-weight: bold;
       cursor: pointer;
     }
 
-    #downloadBtn:hover {
-      opacity: .9;
+    .quality-box {
+      margin-top: 18px;
+      background: #17171d;
+      border: 2px solid #303038;
+      border-radius: 18px;
+      padding: 18px;
+      text-align: left;
     }
 
-    .alternative {
-      display: flex;
-      gap: 10px;
-      margin-top: 15px;
+    .quality-title {
+      font-size: 15px;
+      color: #aaaab2;
+      margin-bottom: 12px;
     }
 
-    .alternative a {
-      flex: 1;
-      padding: 15px;
-      border: 1px solid #333;
+    .qualities {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 9px;
+    }
+
+    .quality {
+      padding: 13px 5px;
       border-radius: 12px;
+      border: 1px solid #3b3b43;
+      background: #222229;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .quality.active {
+      background: #e50909;
+      border-color: #ff3030;
+    }
+
+    .download-btn {
+      width: 100%;
+      margin-top: 18px;
+      padding: 22px;
+      border: 0;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #ff3030, #d80000);
       color: white;
-      text-decoration: none;
+      font-size: 22px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 12px 35px rgba(255, 0, 0, .15);
+    }
+
+    .download-btn:active {
+      transform: scale(.98);
+    }
+
+    .message {
+      min-height: 24px;
+      margin-top: 15px;
+      color: #aaaab2;
+      font-size: 14px;
+    }
+
+    .alternatives {
+      width: 100%;
+      max-width: 650px;
+      margin: 25px auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .alt-button {
+      display: block;
+      padding: 17px 10px;
+      border: 2px solid #33333b;
+      border-radius: 16px;
+      color: white;
       background: #15151a;
       font-weight: bold;
-      text-align: center;
       transition: .2s;
     }
 
-    .alternative a:hover {
-      background: #222229;
-      border-color: #555;
+    .alt-button:hover {
+      border-color: #ff3030;
+      color: #ff4b4b;
     }
 
-    #message {
-      min-height: 25px;
-      margin-top: 15px;
-      color: #aaa;
-    }
-
-    .features {
-      margin-top: 60px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .feature {
-      background: #131319;
-      border: 1px solid #26262d;
-      border-radius: 18px;
-      padding: 25px 18px;
-      text-align: center;
-    }
-
-    .feature-icon {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .feature h3 {
-      margin: 8px 0;
-    }
-
-    .feature p {
-      color: #888;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .section {
-      margin-top: 70px;
-    }
-
-    .section h2 {
-      text-align: center;
-      font-size: 30px;
-      margin-bottom: 25px;
-    }
-
-    .section > p {
-      color: #aaa;
-      line-height: 1.8;
-    }
-
-    .steps {
-      display: grid;
-      gap: 15px;
-    }
-
-    .step {
-      display: flex;
-      gap: 18px;
-      background: #131319;
-      border: 1px solid #26262d;
-      border-radius: 15px;
+    .info {
+      width: 100%;
+      max-width: 850px;
+      margin: 40px auto 0;
       padding: 20px;
     }
 
-    .step-number {
-      min-width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: #ff3030;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-
-    .step h3 {
-      margin: 0 0 7px;
-    }
-
-    .step p {
-      margin: 0;
-      color: #aaa;
-      line-height: 1.6;
-    }
-
-    .faq {
-      display: grid;
-      gap: 15px;
-    }
-
-    .faq-item {
+    .card {
       background: #131319;
-      border: 1px solid #26262d;
-      border-radius: 15px;
-      padding: 20px;
+      border: 1px solid #292930;
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 18px;
     }
 
-    .faq-item h3 {
+    .card h2 {
       margin-top: 0;
+      font-size: 23px;
     }
 
-    .faq-item p {
-      color: #aaa;
-      line-height: 1.6;
+    .card p,
+    .card li {
+      color: #aaaab2;
+      line-height: 1.7;
     }
 
     footer {
-      border-top: 1px solid #222;
       text-align: center;
-      padding: 30px 20px;
-      color: #777;
-      font-size: 13px;
+      color: #666670;
+      padding: 45px 20px;
+      font-size: 14px;
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 600px) {
+      header {
+        padding: 18px 16px;
+      }
 
-      .features {
+      .logo {
+        font-size: 22px;
+      }
+
+      .free {
+        padding: 9px 15px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 55px 16px 30px;
+      }
+
+      .youtube-icon {
+        width: 120px;
+        height: 85px;
+        margin-bottom: 30px;
+      }
+
+      .subtitle {
+        font-size: 17px;
+      }
+
+      .input-box {
+        padding: 12px;
+      }
+
+      .qualities {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .alternatives {
         grid-template-columns: 1fr;
-      }
-
-      .alternative {
-        flex-direction: column;
-      }
-
-      .input-wrapper {
-        flex-wrap: wrap;
-      }
-
-      input {
-        width: 100%;
-        flex-basis: 70%;
-      }
-
-      #pasteBtn {
-        flex: 1;
       }
     }
   </style>
@@ -373,434 +354,302 @@
 
 <body>
 
-<header>
+  <header>
+    <div class="logo">YouTube<span>Downloader</span></div>
+    <div class="free">GRATIS</div>
+  </header>
 
-  <div class="logo">
-    YouTube<span>Downloader</span>
-  </div>
+  <main>
 
-  <div class="badge">
-    GRATIS
-  </div>
+    <section class="hero">
 
-</header>
+      <div class="youtube-icon">
+        <div class="play"></div>
+      </div>
 
+      <h1>
+        Download Video YouTube
+        <span>Dengan Mudah</span>
+      </h1>
 
-<main>
+      <p class="subtitle">
+        YouTube Downloader online yang mudah digunakan.
+        Tempel link video YouTube di bawah untuk mulai.
+      </p>
 
-  <!-- HERO -->
-  <section class="hero">
+      <div class="downloader">
 
-    <div class="hero-icon">
-      ▶
-    </div>
+        <div class="input-box">
+          <div class="link-icon">🔗</div>
 
-    <h1>
-      Download Video YouTube
-      <br>
-      <span>Dengan Mudah</span>
-    </h1>
+          <input
+            id="videoUrl"
+            type="url"
+            placeholder="Tempel link video YouTube..."
+            autocomplete="off"
+          >
+        </div>
 
-    <p>
-      YouTube Downloader online yang mudah digunakan.
-      Tempel link video YouTube di bawah untuk mulai.
-    </p>
-
-
-    <div class="download-box">
-
-      <div class="input-wrapper">
-
-        <span class="link-icon">
-          🔗
-        </span>
-
-        <input
-          type="url"
-          id="youtubeUrl"
-          placeholder="Tempel link video YouTube..."
-          autocomplete="off"
-          aria-label="Link video YouTube"
-        >
-
-        <button
-          id="pasteBtn"
-          type="button"
-        >
+        <button class="paste-btn" onclick="pasteLink()">
           Paste
         </button>
 
+        <div class="quality-box">
+
+          <div class="quality-title">
+            Pilih kualitas video
+          </div>
+
+          <div class="qualities">
+
+            <button class="quality" data-quality="144p">
+              144p
+            </button>
+
+            <button class="quality" data-quality="240p">
+              240p
+            </button>
+
+            <button class="quality" data-quality="360p">
+              360p
+            </button>
+
+            <button class="quality active" data-quality="480p">
+              480p
+            </button>
+
+            <button class="quality" data-quality="720p">
+              720p HD
+            </button>
+
+            <button class="quality" data-quality="1080p">
+              1080p FHD
+            </button>
+
+          </div>
+
+        </div>
+
+        <button class="download-btn" onclick="downloadVideo()">
+          ↓ Download Video
+        </button>
+
+        <div id="message" class="message"></div>
+
       </div>
 
+      <!--
+        =====================================================
+        LINK ALTERNATIF
+        GANTI URL DI href DI BAWAH INI SAJA
+        =====================================================
+      -->
 
-      <button
-        id="downloadBtn"
-        type="button"
-      >
-        ⬇ Download Video
-      </button>
+      <div class="alternatives">
 
-
-      <!-- =========================================
-           TOMBOL ALTERNATIF
-           CUKUP GANTI BAGIAN href
-           ========================================= -->
-
-      <div class="alternative">
-
-        <!-- ALTERNATIF 1 -->
         <a
+          class="alt-button"
           href="https://www.effectivecpmnetwork.com/n1i53fjbft?key=504f09b72041b19282e960db58ffc81d"
           target="_blank"
-          rel="noopener noreferrer"
-        >
-          ⚡ Download Alternatif 1
+          rel="noopener noreferrer">
+          ⚡ Alternatif 1
         </a>
 
-
-        <!-- ALTERNATIF 2 -->
         <a
-          href="https://www.effectivecpmnetwork.com/n1i53fjbft?key=504f09b72041b19282e960db58ffc81d"
+          class="alt-button"
+          href="https://www.effectivecpmnetwork.com/jy6waywf?key=f2f80767a0002de04968fcec31c0c494"
           target="_blank"
-          rel="noopener noreferrer"
-        >
-          ⚡ Download Alternatif 2
+          rel="noopener noreferrer">
+          ⚡ Alternatif 2
         </a>
 
       </div>
 
+    </section>
 
-      <div id="message"></div>
+    <section class="info">
 
-    </div>
-
-  </section>
-
-
-  <!-- FITUR -->
-  <section class="features">
-
-    <div class="feature">
-
-      <div class="feature-icon">
-        ⚡
-      </div>
-
-      <h3>
-        Cepat
-      </h3>
-
-      <p>
-        Proses download yang sederhana dan mudah digunakan.
-      </p>
-
-    </div>
-
-
-    <div class="feature">
-
-      <div class="feature-icon">
-        📱
-      </div>
-
-      <h3>
-        Mudah
-      </h3>
-
-      <p>
-        Bisa digunakan melalui HP, tablet, maupun komputer.
-      </p>
-
-    </div>
-
-
-    <div class="feature">
-
-      <div class="feature-icon">
-        🆓
-      </div>
-
-      <h3>
-        Gratis
-      </h3>
-
-      <p>
-        Gunakan YouTube Downloader langsung melalui browser.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- CARA DOWNLOAD -->
-  <section class="section">
-
-    <h2>
-      Cara Download Video YouTube
-    </h2>
-
-
-    <div class="steps">
-
-      <div class="step">
-
-        <div class="step-number">
-          1
-        </div>
-
-        <div>
-
-          <h3>
-            Salin Link YouTube
-          </h3>
-
-          <p>
-            Buka YouTube dan salin link video yang ingin kamu simpan.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="step">
-
-        <div class="step-number">
-          2
-        </div>
-
-        <div>
-
-          <h3>
-            Tempel Link
-          </h3>
-
-          <p>
-            Tempel URL video YouTube ke kolom download di atas.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <div class="step">
-
-        <div class="step-number">
-          3
-        </div>
-
-        <div>
-
-          <h3>
-            Download
-          </h3>
-
-          <p>
-            Tekan tombol Download Video untuk melanjutkan.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- SEO CONTENT -->
-  <section class="section">
-
-    <h2>
-      YouTube Downloader Online
-    </h2>
-
-    <p>
-      YouTube Downloader adalah halaman web yang dirancang untuk
-      membantu pengguna memproses link video YouTube melalui browser.
-      Cukup salin URL video, tempelkan pada kolom yang tersedia,
-      kemudian gunakan tombol download.
-    </p>
-
-    <p>
-      Website ini dapat digunakan melalui perangkat Android,
-      iPhone, tablet, maupun komputer selama memiliki browser
-      dan koneksi internet.
-    </p>
-
-    <p>
-      Gunakan layanan ini hanya untuk konten yang kamu miliki
-      atau konten yang memang kamu memiliki izin untuk menyimpan
-      dan menggunakannya.
-    </p>
-
-  </section>
-
-
-  <!-- FAQ -->
-  <section class="section">
-
-    <h2>
-      FAQ YouTube Downloader
-    </h2>
-
-
-    <div class="faq">
-
-      <div class="faq-item">
-
-        <h3>
-          Bagaimana cara download video YouTube?
-        </h3>
+      <div class="card">
+        <h2>🎬 YouTube Downloader</h2>
 
         <p>
-          Salin link video YouTube, tempelkan ke kolom di halaman ini,
-          kemudian tekan tombol Download Video.
+          Gunakan YouTube Downloader untuk membantu mengunduh
+          video YouTube melalui browser dengan tampilan yang
+          sederhana dan mudah digunakan.
         </p>
-
       </div>
 
+      <div class="card">
+        <h2>📱 Cara Menggunakan</h2>
 
-      <div class="faq-item">
+        <ol>
+          <li>Salin link video dari YouTube.</li>
+          <li>Tempel link ke kolom di atas.</li>
+          <li>Pilih kualitas video yang diinginkan.</li>
+          <li>Tekan tombol Download Video.</li>
+        </ol>
+      </div>
 
-        <h3>
-          Apakah YouTube Downloader bisa digunakan di HP?
-        </h3>
+      <div class="card">
+        <h2>⚡ Pilihan Kualitas</h2>
 
         <p>
-          Ya. Halaman ini dirancang agar dapat dibuka melalui
-          browser di perangkat mobile maupun komputer.
+          Tersedia pilihan kualitas mulai dari 144p,
+          240p, 360p, 480p, 720p HD hingga 1080p FHD.
         </p>
-
       </div>
 
+    </section>
 
-      <div class="faq-item">
+  </main>
 
-        <h3>
-          Apakah perlu menginstal aplikasi?
-        </h3>
+  <footer>
+    © 2026 YouTube Downloader. Gunakan layanan secara bijak.
+  </footer>
 
-        <p>
-          Tidak untuk halaman web ini. Kamu dapat membukanya
-          langsung melalui browser.
-        </p>
+  <script>
 
-      </div>
+    let selectedQuality = "480p";
 
+    const qualityButtons =
+      document.querySelectorAll(".quality");
 
-      <div class="faq-item">
+    qualityButtons.forEach(button => {
 
-        <h3>
-          Apakah layanan ini gratis?
-        </h3>
+      button.addEventListener("click", function () {
 
-        <p>
-          Tampilan halaman ini dapat digunakan secara gratis.
-          Fitur download utama akan aktif setelah API downloader
-          disambungkan.
-        </p>
+        qualityButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
 
-      </div>
+        this.classList.add("active");
 
-    </div>
+        selectedQuality =
+          this.dataset.quality;
 
-  </section>
+      });
 
-</main>
+    });
 
 
-<footer>
+    async function pasteLink() {
 
-  <p>
-    © 2026 YouTube Downloader
-  </p>
+      const input =
+        document.getElementById("videoUrl");
 
-  <p>
-    Layanan independen dan tidak berafiliasi dengan YouTube.
-  </p>
+      try {
 
-</footer>
+        const text =
+          await navigator.clipboard.readText();
 
+        input.value = text;
 
-<script>
+        showMessage("Link berhasil ditempel.");
 
-  const pasteBtn = document.getElementById("pasteBtn");
-  const youtubeUrl = document.getElementById("youtubeUrl");
-  const downloadBtn = document.getElementById("downloadBtn");
-  const message = document.getElementById("message");
+      } catch (error) {
 
+        input.focus();
 
-  // Tombol Paste
-  pasteBtn.addEventListener("click", async () => {
-
-    try {
-
-      const text = await navigator.clipboard.readText();
-
-      if (text) {
-
-        youtubeUrl.value = text;
-
-        message.textContent =
-          "Link berhasil ditempel.";
-
-      } else {
-
-        message.textContent =
-          "Clipboard kosong.";
+        showMessage(
+          "Tekan lama kolom lalu pilih Tempel."
+        );
 
       }
 
-    } catch (error) {
-
-      message.textContent =
-        "Tidak bisa membaca clipboard. Silakan tempel link secara manual.";
-
     }
 
-  });
 
+    function isYouTubeUrl(url) {
 
-  // Tombol Download
-  downloadBtn.addEventListener("click", () => {
+      try {
 
-    const url = youtubeUrl.value.trim();
+        const parsed =
+          new URL(url);
 
+        return (
+          parsed.hostname.includes("youtube.com") ||
+          parsed.hostname.includes("youtu.be")
+        );
 
-    if (!url) {
+      } catch (error) {
 
-      message.textContent =
-        "Silakan masukkan link video YouTube terlebih dahulu.";
+        return false;
 
-      youtubeUrl.focus();
-
-      return;
+      }
 
     }
 
 
-    if (
-      !url.includes("youtube.com") &&
-      !url.includes("youtu.be")
-    ) {
+    function downloadVideo() {
 
-      message.textContent =
-        "Masukkan link video YouTube yang valid.";
+      const input =
+        document.getElementById("videoUrl");
 
-      return;
+      const url =
+        input.value.trim();
+
+      if (!url) {
+
+        showMessage(
+          "Silakan masukkan link YouTube terlebih dahulu."
+        );
+
+        input.focus();
+
+        return;
+
+      }
+
+      if (!isYouTubeUrl(url)) {
+
+        showMessage(
+          "Link yang dimasukkan bukan link YouTube."
+        );
+
+        return;
+
+      }
+
+      /*
+       * =====================================================
+       * BAGIAN API DOWNLOADER
+       * =====================================================
+       *
+       * Halaman GitHub Pages hanya menjalankan HTML/CSS/JS.
+       * Untuk download YouTube secara langsung diperlukan
+       * backend/API downloader.
+       *
+       * Tombol di bawah sementara mengarahkan pengguna
+       * ke Alternatif 1.
+       *
+       * Jika nanti kamu punya API downloader sendiri,
+       * bagian ini tinggal diganti.
+       */
+
+      showMessage(
+        "Kualitas " + selectedQuality +
+        " dipilih. Silakan gunakan salah satu alternatif."
+      );
+
+      window.open(
+        "https://cobalt.tools/",
+        "_blank"
+      );
 
     }
 
 
-    message.textContent =
-      "Link YouTube sudah diterima. API downloader belum dipasang.";
+    function showMessage(text) {
 
-  });
+      const message =
+        document.getElementById("message");
 
-</script>
+      message.textContent = text;
+
+    }
+
+  </script>
 
 </body>
 </html>
+```
